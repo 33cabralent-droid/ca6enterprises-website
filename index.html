@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA6 ENTERPRISES LLC | Florida Business Solutions</title>
+    <title>CA6 ENTERPRISES LLC | Space Coast Business Solutions</title>
     <meta name="description" content="Professional Business Consulting & Compliance Services - Florida LLC #L23000310743">
     <style>
-        :root { --primary: #0a2540; --accent: #00bfff; }
+        :root { --primary: #0a2540; --accent: #00d4ff; --space: #112233; }
         body { font-family: 'Segoe UI', Arial, sans-serif; margin:0; padding:0; line-height:1.6; color:#333; background:#f8f9fa; }
-        header { background: var(--primary); color:white; padding: 2.5rem 1rem; text-align:center; }
-        .logo { font-size: 3.2rem; font-weight: bold; margin:0; letter-spacing: -2px; }
+        header { background: linear-gradient(135deg, var(--primary), var(--space)); color:white; padding: 3rem 1rem; text-align:center; position:relative; overflow:hidden; }
+        .logo { font-size: 3.5rem; font-weight: bold; margin:0; letter-spacing: -3px; text-shadow: 0 4px 15px rgba(0,212,255,0.3); }
         .logo span { color: var(--accent); }
+        .tagline { font-size: 1.1rem; margin: 8px 0 0; opacity: 0.9; }
         .container { max-width: 1100px; margin: auto; padding: 2rem 1rem; }
         .badge { background:#28a745; color:white; padding:8px 20px; border-radius:30px; display:inline-block; margin:12px 0; font-size:1rem; }
-        .section { padding: 3.5rem 0; }
+        .section { padding: 4rem 0; }
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .card { background:white; padding:2rem; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.08); }
         form { max-width: 600px; margin: 2rem auto; background:white; padding:2rem; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.08); }
@@ -25,7 +26,7 @@
 <body>
     <header>
         <h1 class="logo">CA<span>6</span> ENTERPRISES</h1>
-        <p style="font-size:1.4rem; margin:8px 0;">LLC • Melbourne, Florida</p>
+        <p class="tagline">Space Coast • Melbourne, Florida</p>
         <div class="badge">ACTIVE • Document # L23000310743</div>
         <p>Filed June 28, 2023 • Annual Report April 27, 2026</p>
     </header>
@@ -33,7 +34,13 @@
     <div class="container">
         <section class="section">
             <h2>Welcome</h2>
-            <p>CA6 ENTERPRISES LLC is a professionally registered Florida Limited Liability Company providing reliable business solutions across the state.</p>
+            <p>CA6 ENTERPRISES LLC is a professionally registered Florida Limited Liability Company providing reliable business solutions across the Space Coast and beyond.</p>
+        </section>
+
+        <section class="section">
+            <h2>About Us</h2>
+            <p>Founded in 2023 and based in Melbourne, Florida, CA6 ENTERPRISES LLC was established to support businesses with expert consulting and compliance services. We understand the unique opportunities and challenges of operating on Florida’s Space Coast — from innovation-driven startups to established companies looking for growth and stability.</p>
+            <p>Our mission is to deliver integrity-driven solutions that help our clients thrive in one of America’s most dynamic regions.</p>
         </section>
 
         <section class="section">
@@ -53,16 +60,13 @@
         <section class="section">
             <h2>Contact Us</h2>
             <p><strong>Email:</strong> <a href="mailto:info@ca6enterprises.com">info@ca6enterprises.com</a></p>
-            <p><strong>Phone:</strong> [Your Phone Number Here]</p>
             <p><strong>Location:</strong> Melbourne, Florida</p>
 
             <form action="https://formsubmit.co/info@ca6enterprises.com" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" name="phone" placeholder="Phone Number">
                 <textarea name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
                 <button type="submit" class="btn">Send Message</button>
-                <input type="hidden" name="_subject" value="New Inquiry from CA6 Website">
             </form>
         </section>
     </div>
