@@ -12,9 +12,9 @@
     :root {
       --ink: #f3efe6;
       --muted: #b7b0a4;
-      --paper: #141210;
-      --card: #1e1b17;
-      --line: #3a342c;
+      --paper: #121110;
+      --card: #1c1916;
+      --line: #34302a;
       --sea: #2f6f6b;
       --sea-deep: #3d8a85;
       --sand: #c4a574;
@@ -22,57 +22,59 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
+      margin: 0; color: var(--ink); background: var(--paper);
       font-family: "Source Sans 3", "Segoe UI", sans-serif;
-      font-size: 1.125rem;
-      line-height: 1.6;
+      font-size: 1.1rem; line-height: 1.55;
     }
     a { color: #9fd4cf; }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-      outline: 3px solid var(--sand);
-      outline-offset: 2px;
+      outline: 3px solid var(--sand); outline-offset: 2px;
     }
     .skip { position: absolute; left: 1rem; top: -4rem; background: #2a2622; color: #f3efe6; padding: 0.5rem 1rem; z-index: 10; }
     .skip:focus { top: 1rem; }
-    header.site {
-      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-      max-width: 1080px; margin: 0 auto; padding: 1.25rem 1.25rem 0;
-    }
-    .brand { font-family: Fraunces, Georgia, serif; font-weight: 640; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; font-size: 1.15rem; }
+    header.site, .wrap { max-width: 1040px; margin: 0 auto; padding: 1.25rem; }
+    header.site { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-bottom: 0; }
+    .brand { font-family: Fraunces, Georgia, serif; font-weight: 640; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; font-size: 1.05rem; }
     nav { display: flex; gap: 1.25rem; }
     nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
     nav a:hover { color: var(--ink); }
-    .hero, .block, footer { max-width: 1080px; margin: 0 auto; padding: 1.25rem; }
-    .hero { padding-top: 4.5rem; padding-bottom: 3rem; }
-    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 520; letter-spacing: -0.03em; line-height: 1.15; margin: 0; }
-    h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); max-width: 16ch; }
-    .lede { font-size: 1.3rem; max-width: 40rem; color: var(--muted); margin: 1.25rem 0 0; }
-    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .eyebrow { color: var(--sand); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.85rem; margin: 0 0 0.8rem; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 520; letter-spacing: -0.03em; line-height: 1.12; margin: 0; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); max-width: 16ch; }
+    .lede { font-size: 1.25rem; max-width: 40rem; color: var(--muted); margin: 1.1rem 0 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
     .btn {
       display: inline-block; background: var(--sea); color: #fff; text-decoration: none;
-      padding: 0.85rem 1.25rem; border-radius: 999px; font-weight: 600; border: none; cursor: pointer; font-size: 1rem;
+      padding: 0.8rem 1.2rem; border-radius: 999px; font-weight: 600; border: none; cursor: pointer; font-size: 1rem;
     }
     .btn:hover { background: var(--sea-deep); }
     .btn.ghost { background: transparent; color: #f3efe6; box-shadow: inset 0 0 0 1.5px #8fccc8; }
-    .place { margin-top: 2.5rem; color: var(--muted); font-size: 0.95rem; }
-    h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
-    .intro { max-width: 40rem; color: var(--muted); margin-top: 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; }
-    .card h3 { font-size: 1.45rem; margin-bottom: 0.6rem; }
-    .card p { margin: 0; }
-    ol.steps { margin: 1.25rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.75rem; }
-    ol.steps li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
-    ol.steps strong { font-family: Fraunces, Georgia, serif; font-weight: 520; }
-    form { display: grid; gap: 0.75rem; margin-top: 1.25rem; max-width: 36rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-top: 2.5rem; }
+    .fact { border-top: 1px solid var(--line); padding-top: 0.7rem; }
+    .fact span { display: block; color: var(--muted); font-size: 0.85rem; }
+    .fact strong { font-weight: 600; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 0.5rem; }
+    .intro { max-width: 38rem; color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; margin-top: 1.25rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.3rem; }
+    .card h3 { font-size: 1.35rem; margin-bottom: 0.45rem; }
+    .card p { margin: 0; color: var(--muted); }
+    ol.steps { margin: 1.1rem 0 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 0.7rem; }
+    ol.steps li {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 0.95rem 1.1rem 0.95rem 3.2rem; position: relative;
+    }
+    ol.steps li::before {
+      counter-increment: step; content: counter(step);
+      position: absolute; left: 1rem; top: 0.95rem; color: var(--sand); font-family: Fraunces, Georgia, serif;
+    }
+    form { display: grid; gap: 0.7rem; margin-top: 1.1rem; max-width: 36rem; }
     label { font-weight: 600; font-size: 0.95rem; }
     input, textarea {
-      width: 100%; margin-top: 0.3rem; padding: 0.8rem 0.9rem; border: 1px solid var(--line);
+      width: 100%; margin-top: 0.3rem; padding: 0.75rem 0.85rem; border: 1px solid var(--line);
       border-radius: 10px; background: var(--card); font: inherit; color: var(--ink);
     }
-    footer { margin-top: 2rem; padding-top: 1.5rem; padding-bottom: 2.5rem; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); }
+    footer { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1.25rem 2.5rem; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); }
+    .hero { padding-top: 3.5rem; }
   </style>
 </head>
 <body>
@@ -81,48 +83,54 @@
     <a class="brand" href="/">CA6 ENTERPRISES LLC</a>
     <nav>
       <a href="#supply">Supply</a>
-      <a href="#start">Start</a>
+      <a href="#buyers">Buyers</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
   <main id="main">
-    <section class="hero">
-      <h1>Logistics supply for the Department of Defense.</h1>
-      <p class="lede">CA6 ENTERPRISES LLC supplies the Department of War and the Department of Defense with the items a requirement needs: supplies, equipment, services, and related support.</p>
+    <section class="wrap hero">
+      <p class="eyebrow">Defense logistics · Melbourne, Florida</p>
+      <h1>Supplies, equipment, and support for the requirement in front of you.</h1>
+      <p class="lede">CA6 ENTERPRISES LLC sources logistics items for the Department of War and the Department of Defense. Send the requirement. We tell you if we can fill it.</p>
       <div class="actions">
         <a class="btn" href="#contact">Send a requirement</a>
         <a class="btn ghost" href="#supply">What we supply</a>
       </div>
-      <p class="place">Melbourne, Florida</p>
+      <div class="facts">
+        <div class="fact"><span>Legal name</span><strong>CA6 ENTERPRISES LLC</strong></div>
+        <div class="fact"><span>Location</span><strong>Melbourne, Florida</strong></div>
+        <div class="fact"><span>Florida document</span><strong>L23000310743</strong></div>
+        <div class="fact"><span>Buyers</span><strong>DoW and DoD</strong></div>
+      </div>
     </section>
-    <section class="block" id="supply">
+    <section class="wrap" id="supply">
       <h2>What we supply</h2>
-      <p class="intro">Supplies, equipment, and the support that goes with them, for a Department of War or Department of Defense requirement.</p>
+      <p class="intro">The same kinds of buys a defense supply house handles. We quote the item the solicitation names.</p>
       <div class="grid">
         <article class="card">
           <h3>Supplies</h3>
-          <p>Consumables and materiel a unit or contract needs on a date.</p>
+          <p>Consumables and materiel a unit or contract needs by a date.</p>
         </article>
         <article class="card">
           <h3>Equipment</h3>
-          <p>Gear and hardware the requirement names.</p>
+          <p>Gear and hardware named on the requirement.</p>
         </article>
         <article class="card">
-          <h3>Services</h3>
-          <p>Related support that goes with the item, when the requirement asks for it.</p>
+          <h3>Related support</h3>
+          <p>The service that has to travel with the item, when the buy asks for it.</p>
         </article>
       </div>
     </section>
-    <section class="block" id="start">
-      <h2>What to send</h2>
-      <p class="intro">A short note is enough. These three details are what we need to tell you if we can fill it.</p>
+    <section class="wrap" id="buyers">
+      <h2>Who this is for</h2>
+      <p class="intro">Department of War and Department of Defense buyers, and the primes filling those requirements.</p>
       <ol class="steps">
-        <li><strong>The item.</strong> A description, NSN, or the solicitation itself.</li>
-        <li><strong>The quantity and place.</strong> How many, and where they have to go.</li>
-        <li><strong>The date.</strong> When it is needed.</li>
+        <li><strong>Send the item.</strong> A description, an NSN, or the solicitation.</li>
+        <li><strong>Send the quantity and the place.</strong> How many, and where they have to arrive.</li>
+        <li><strong>Send the date.</strong> We answer with whether we can fill it.</li>
       </ol>
     </section>
-    <section class="block" id="contact">
+    <section class="wrap" id="contact">
       <h2>Contact</h2>
       <p class="intro">Email <a href="mailto:info@ca6enterprises.com">info@ca6enterprises.com</a>, or use the form.</p>
       <form action="https://formsubmit.co/info@ca6enterprises.com" method="POST">
@@ -133,7 +141,7 @@
         <label>Email
           <input type="email" name="email" autocomplete="email" required>
         </label>
-        <label>The requirement
+        <label>Requirement, NSN, or solicitation
           <textarea name="message" rows="6" required></textarea>
         </label>
         <button class="btn" type="submit">Send</button>
