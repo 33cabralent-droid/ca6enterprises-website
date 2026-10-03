@@ -1,78 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA6 ENTERPRISES LLC | Space Coast Business Solutions</title>
-    <meta name="description" content="Professional Business Consulting & Compliance Services - Florida LLC #L23000310743">
-    <style>
-        :root { --primary: #0a2540; --accent: #00d4ff; --space: #112233; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin:0; padding:0; line-height:1.6; color:#333; background:#f8f9fa; }
-        header { background: linear-gradient(135deg, var(--primary), var(--space)); color:white; padding: 3rem 1rem; text-align:center; position:relative; overflow:hidden; }
-        .logo { font-size: 3.5rem; font-weight: bold; margin:0; letter-spacing: -3px; text-shadow: 0 4px 15px rgba(0,212,255,0.3); }
-        .logo span { color: var(--accent); }
-        .tagline { font-size: 1.1rem; margin: 8px 0 0; opacity: 0.9; }
-        .container { max-width: 1100px; margin: auto; padding: 2rem 1rem; }
-        .badge { background:#28a745; color:white; padding:8px 20px; border-radius:30px; display:inline-block; margin:12px 0; font-size:1rem; }
-        .section { padding: 4rem 0; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .card { background:white; padding:2rem; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.08); }
-        form { max-width: 600px; margin: 2rem auto; background:white; padding:2rem; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.08); }
-        input, textarea { width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px; font-size:1rem; }
-        .btn { background:var(--accent); color:white; padding:14px 28px; border:none; border-radius:8px; font-size:1.1rem; cursor:pointer; }
-        footer { background: var(--primary); color:white; text-align:center; padding:2rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA6 Enterprises | Business consulting in Melbourne, Florida</title>
+  <meta name="description" content="CA6 Enterprises LLC helps Space Coast businesses with consulting and Florida compliance. Based in Melbourne, Florida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --paper: #f6f1e8;
+      --card: #fffdf8;
+      --line: #e2d8c8;
+      --sea: #1f4d4a;
+      --sea-deep: #163835;
+      --sand: #c4a574;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+    a { color: var(--sea); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--sand);
+      outline-offset: 2px;
+    }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--ink);
+      color: white;
+      padding: 0.5rem 1rem;
+      z-index: 10;
+    }
+    .skip:focus { top: 1rem; }
+    header.site {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 0;
+    }
+    .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 640;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.25rem;
+    }
+    nav { display: flex; gap: 1.25rem; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--ink); }
+    .hero, .block, footer { max-width: 1080px; margin: 0 auto; padding: 1.25rem; }
+    .hero { padding-top: 4.5rem; padding-bottom: 3rem; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 520; letter-spacing: -0.03em; line-height: 1.15; margin: 0; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); max-width: 14ch; }
+    .lede { font-size: 1.3rem; max-width: 38rem; color: var(--muted); margin: 1.25rem 0 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .btn {
+      display: inline-block;
+      background: var(--sea);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover { background: var(--sea-deep); }
+    .btn.ghost { background: transparent; color: var(--sea); box-shadow: inset 0 0 0 1.5px var(--sea); }
+    .place { margin-top: 2.5rem; color: var(--muted); font-size: 0.95rem; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
+    .intro { max-width: 40rem; color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .card h3 { font-size: 1.45rem; margin-bottom: 0.6rem; }
+    .card p { margin: 0; color: var(--ink); }
+    .card p + p { margin-top: 0.75rem; color: var(--muted); }
+    ol.steps { margin: 1.25rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.75rem; }
+    ol.steps li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+    ol.steps strong { font-family: Fraunces, Georgia, serif; font-weight: 520; }
+    form { display: grid; gap: 0.75rem; margin-top: 1.25rem; max-width: 36rem; }
+    label { font-weight: 600; font-size: 0.95rem; }
+    input, textarea {
+      width: 100%;
+      margin-top: 0.3rem;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      font: inherit;
+      color: var(--ink);
+    }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      padding-bottom: 2.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--line);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1 class="logo">CA<span>6</span> ENTERPRISES</h1>
-        <p class="tagline">Space Coast • Melbourne, Florida</p>
-        <div class="badge">ACTIVE • Document # L23000310743</div>
-        <p>Filed June 28, 2023 • Annual Report April 27, 2026</p>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <a class="brand" href="/">CA6 Enterprises</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#start">Start</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <h1>A clearer next step for your business.</h1>
+      <p class="lede">CA6 Enterprises is a Melbourne firm for owners who need straight advice, or help keeping a Florida company in good standing.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Send a note</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+      <p class="place">Melbourne, Florida · Space Coast</p>
+    </section>
 
-    <div class="container">
-        <section class="section">
-            <h2>Welcome</h2>
-            <p>CA6 ENTERPRISES LLC is a professionally registered Florida Limited Liability Company providing reliable business solutions across the Space Coast and beyond.</p>
-        </section>
+    <section class="block" id="work">
+      <h2>What we do</h2>
+      <p class="intro">Two kinds of work. If yours is one of them, write. If it isn’t, we’ll say so.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Business consulting</h3>
+          <p>A practical look at how the company runs, where it’s stuck, and what to do next.</p>
+          <p>Useful when you want a plan you can act on, not a slide deck. Startups and established companies both.</p>
+        </article>
+        <article class="card">
+          <h3>Filings and compliance</h3>
+          <p>Florida LLC upkeep: annual reports, state filings, and the paperwork that keeps an entity active.</p>
+          <p>Bring the company name and the deadline you’re up against. We’ll tell you what the filing actually requires.</p>
+        </article>
+      </div>
+    </section>
 
-        <section class="section">
-            <h2>About Us</h2>
-            <p>Founded in 2023 and based in Melbourne, Florida, CA6 ENTERPRISES LLC was established to support businesses with expert consulting and compliance services. We understand the unique opportunities and challenges of operating on Florida’s Space Coast — from innovation-driven startups to established companies looking for growth and stability.</p>
-            <p>Our mission is to deliver integrity-driven solutions that help our clients thrive in one of America’s most dynamic regions.</p>
-        </section>
+    <section class="block" id="start">
+      <h2>What to send</h2>
+      <p class="intro">A short note is enough. These three details get you a useful reply instead of a round of questions.</p>
+      <ol class="steps">
+        <li><strong>The company.</strong> Name, and the Florida document number if you have it.</li>
+        <li><strong>The job.</strong> Advice on the business, a filing, or both.</li>
+        <li><strong>The date.</strong> Any deadline, even a rough one.</li>
+      </ol>
+    </section>
 
-        <section class="section">
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="card">
-                    <h3>Business Consulting</h3>
-                    <p>Strategic guidance, operational efficiency, and growth planning for startups and established companies.</p>
-                </div>
-                <div class="card">
-                    <h3>Document & Compliance</h3>
-                    <p>LLC maintenance, annual reports, filings, and full regulatory compliance support with the State of Florida.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Contact Us</h2>
-            <p><strong>Email:</strong> <a href="mailto:info@ca6enterprises.com">info@ca6enterprises.com</a></p>
-            <p><strong>Location:</strong> Melbourne, Florida</p>
-
-            <form action="https://formsubmit.co/info@ca6enterprises.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 CA6 ENTERPRISES LLC • Florida Document # L23000310743 • All Rights Reserved</p>
-    </footer>
+    <section class="block" id="contact">
+      <h2>Contact</h2>
+      <p class="intro">Email <a href="mailto:info@ca6enterprises.com">info@ca6enterprises.com</a>, or use the form. We read both.</p>
+      <form action="https://formsubmit.co/info@ca6enterprises.com" method="POST">
+        <input type="hidden" name="_subject" value="Message from ca6enterprises.com">
+        <label>Name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>How we can help
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 CA6 Enterprises LLC · Melbourne, Florida · Florida document L23000310743</p>
+  </footer>
 </body>
 </html>
