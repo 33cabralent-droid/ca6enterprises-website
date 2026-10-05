@@ -1,1 +1,233 @@
-__FILE__
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA6 ENTERPRISES LLC | Defense logistics supply</title>
+  <meta name="description" content="CA6 ENTERPRISES LLC supplies the Department of War and the Department of Defense with logistics items: supplies, equipment, services, and related support. Melbourne, Florida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050608; --panel: #0b1018; --panel2: #0e1520; --line: rgba(184,197,214,0.14);
+      --text: #f5f5f0; --muted: #a9b4c3; --dim: #7a8fa8;
+      --gold: #c9a84c; --gold2: #e8c96a; --blue: #1a6fc4; --blue2: #2484e8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: var(--gold2); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--gold2); outline-offset: 3px; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.08; margin: 0; }
+    .gold { color: var(--gold); }
+
+    header { position: sticky; top: 0; z-index: 10; background: rgba(5,8,14,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+    .mark { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.05rem; color: var(--bg); background: linear-gradient(135deg, var(--gold2), var(--gold)); width: 40px; height: 40px; display: grid; place-items: center; border-radius: 3px; }
+    .brand span { font-weight: 700; letter-spacing: 0.14em; font-size: 0.82rem; }
+    .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+    .nav ul a { color: var(--muted); text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 600; }
+    .nav ul a:hover { color: var(--gold2); }
+
+    .hero { position: relative; min-height: clamp(560px, 88vh, 820px); display: flex; align-items: center; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(26,111,196,0.16), transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(201,168,76,0.08), transparent 50%),
+        var(--bg); }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 56px 56px; opacity: 0.35; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%); }
+    .hero .wrap { position: relative; display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
+    .badge { display: inline-block; border: 1px solid rgba(201,168,76,0.5); background: rgba(201,168,76,0.08); color: var(--gold2); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; margin-bottom: 26px; }
+    .hero h1 { font-size: clamp(2.6rem, 5.6vw, 4.6rem); font-weight: 900; margin-bottom: 22px; }
+    .hero p.lead { color: var(--muted); font-size: 1.12rem; max-width: 36rem; margin: 0 0 32px; }
+    .btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 13px 26px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border-radius: 2px; border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+    .btn-blue { background: var(--blue); color: #fff; }
+    .btn-blue:hover { background: var(--blue2); }
+    .btn-line { border-color: rgba(245,245,240,0.35); color: var(--text); }
+    .btn-line:hover { border-color: var(--gold2); color: var(--gold2); }
+    .stats { display: grid; gap: 16px; }
+    .stat { border: 1px solid rgba(36,132,232,0.28); background: rgba(14,21,32,0.7); padding: 22px 24px; text-align: center; border-radius: 2px; }
+    .stat b { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); line-height: 1.1; }
+    .stat small { display: block; color: var(--dim); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.7rem; font-weight: 600; margin-top: 6px; }
+
+    section.block { padding: 104px 0; border-top: 1px solid var(--line); }
+    section.alt { background: linear-gradient(180deg, var(--panel), var(--bg)); }
+    .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.74rem; font-weight: 700; margin: 0 0 14px; }
+    .kicker::before { content: ""; display: inline-block; width: 28px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 12px; }
+    h2 { font-size: clamp(2.2rem, 4.2vw, 3.3rem); font-weight: 900; margin-bottom: 26px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .copy p { color: var(--muted); margin: 0 0 18px; }
+    .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+    .card { background: var(--panel2); border: 1px solid var(--line); padding: 26px; border-radius: 2px; transition: border-color .2s, transform .2s; }
+    .card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-2px); }
+    .card .ic { width: 38px; height: 38px; border: 1px solid rgba(201,168,76,0.5); color: var(--gold2); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 16px; border-radius: 2px; font-family: 'Playfair Display', serif; }
+    .card h3 { font-size: 1.22rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); margin: 0; font-size: 0.98rem; }
+
+    .cap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; margin-top: 40px; }
+    .panel { background: var(--panel2); border: 1px solid var(--line); padding: 30px; border-radius: 2px; }
+    .panel h3 { font-size: 1.15rem; color: var(--gold); margin-bottom: 18px; font-family: 'Source Sans 3', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; }
+    .row { display: grid; grid-template-columns: 11rem 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .row:last-child { border-bottom: 0; }
+    .row dt { color: var(--dim); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.74rem; font-weight: 600; padding-top: 3px; }
+    .row dd { margin: 0; font-weight: 600; }
+    ul.checks { list-style: none; margin: 0; padding: 0; }
+    ul.checks li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--line); color: var(--text); }
+    ul.checks li:last-child { border-bottom: 0; }
+    ul.checks li::before { content: ""; position: absolute; left: 4px; top: 19px; width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); }
+
+    .contact-items { display: grid; gap: 14px; margin-top: 8px; }
+    .ci { display: flex; gap: 16px; align-items: flex-start; background: var(--panel2); border: 1px solid var(--line); padding: 18px 20px; border-radius: 2px; }
+    .ci .ic { flex: none; width: 34px; height: 34px; border: 1px solid rgba(201,168,76,0.5); color: var(--gold2); display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; }
+    .ci small { display: block; color: var(--dim); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.7rem; font-weight: 600; }
+    form { display: grid; gap: 14px; background: var(--panel2); border: 1px solid var(--line); padding: 30px; border-radius: 2px; }
+    label { display: grid; gap: 6px; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--dim); font-weight: 600; }
+    input, textarea { font: inherit; font-size: 1rem; text-transform: none; letter-spacing: normal; color: var(--text); background: #070b11; border: 1px solid rgba(184,197,214,0.22); border-radius: 2px; padding: 12px 14px; }
+    input:focus, textarea:focus { border-color: var(--gold); outline: none; }
+    form .note { color: var(--dim); font-size: 0.9rem; margin: 0; }
+
+    footer { border-top: 1px solid var(--line); padding: 34px 0; color: var(--dim); font-size: 0.88rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .hero .wrap, .two, .cap { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .grid3 { grid-template-columns: 1fr; }
+      .nav ul { gap: 16px; }
+    }
+    @media (max-width: 600px) {
+      .nav ul { display: none; }
+      .stats, .grid4 { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; gap: 2px; }
+      section.block { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><div class="mark">C6</div><span>CA6 ENTERPRISES LLC</span></a>
+      <nav aria-label="Main"><ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#capability">Capability Statement</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <div class="badge">Defense Logistics &middot; Melbourne, Florida</div>
+          <h1>Defense Supply<br><span class="gold">Delivered to</span><br>the Requirement.</h1>
+          <p class="lead">CA6 ENTERPRISES LLC supplies the Department of War and the Department of Defense with logistics items: supplies, equipment, services, and related support.</p>
+          <div class="btns">
+            <a class="btn btn-blue" href="#capability">View Capability Statement</a>
+            <a class="btn btn-line" href="#contact">Contact Us</a>
+          </div>
+        </div>
+        <div class="stats" aria-label="Company facts">
+          <div class="stat"><b>DoW &middot; DoD</b><small>Who we supply</small></div>
+          <div class="stat"><b>2023</b><small>Established in Florida</small></div>
+          <div class="stat"><b>Active</b><small>Florida LLC status</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="wrap two">
+        <div class="copy">
+          <p class="kicker">Who We Are</p>
+          <h2>Built for<br><span class="gold">the Mission.</span></h2>
+          <p>CA6 ENTERPRISES LLC is a Florida limited liability company based in Melbourne, on Florida's Space Coast. Our focus is simple: get defense buyers the logistics items they need.</p>
+          <p>We work from the requirement in front of you. Send the item, part number, NSN, or solicitation, the quantity and delivery point, and the date you need it, and we'll respond with what we can supply.</p>
+        </div>
+        <div class="grid4">
+          <div class="card"><div class="ic">01</div><h3>Defense Focus</h3><p>Our primary buyers are the Department of War and the Department of Defense.</p></div>
+          <div class="card"><div class="ic">02</div><h3>Space Coast Based</h3><p>Located in Melbourne, Brevard County, Florida.</p></div>
+          <div class="card"><div class="ic">03</div><h3>Requirement First</h3><p>Quotes start from your item, quantity, place, and date.</p></div>
+          <div class="card"><div class="ic">04</div><h3>Direct Contact</h3><p>One inbox for requirements and questions: info@ca6enterprises.com.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" id="services">
+      <div class="wrap">
+        <p class="kicker">What We Do</p>
+        <h2>Core<br><span class="gold">Supply Areas</span></h2>
+        <div class="grid3">
+          <div class="card"><div class="ic">S</div><h3>Supplies</h3><p>Consumables and general supplies sourced to the specification in your requirement.</p></div>
+          <div class="card"><div class="ic">E</div><h3>Equipment</h3><p>Equipment and parts for defense programs, matched to the item or NSN you name.</p></div>
+          <div class="card"><div class="ic">R</div><h3>Services & Related Support</h3><p>Services and related logistics support that go with the items you're buying.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="capability">
+      <div class="wrap">
+        <p class="kicker">Federal Procurement</p>
+        <h2>Capability<br><span class="gold">Statement</span></h2>
+        <div class="cap">
+          <div class="panel">
+            <h3>Company Data</h3>
+            <dl style="margin:0">
+              <div class="row"><dt>Registered Name</dt><dd>CA6 ENTERPRISES LLC</dd></div>
+              <div class="row"><dt>Entity Type</dt><dd>Florida Limited Liability Company</dd></div>
+              <div class="row"><dt>Florida Document</dt><dd>L23000310743</dd></div>
+              <div class="row"><dt>Established</dt><dd>June 28, 2023</dd></div>
+              <div class="row"><dt>Location</dt><dd>Melbourne, Brevard County, Florida</dd></div>
+              <div class="row"><dt>Contact</dt><dd><a href="mailto:info@ca6enterprises.com">info@ca6enterprises.com</a></dd></div>
+            </dl>
+          </div>
+          <div class="panel">
+            <h3>Core Capabilities</h3>
+            <ul class="checks">
+              <li>Supplies for defense requirements</li>
+              <li>Equipment and parts sourcing</li>
+              <li>Services and related logistics support</li>
+              <li>Quotes against open solicitations</li>
+              <li>Active Florida LLC, annual report current</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" id="contact">
+      <div class="wrap two">
+        <div class="copy">
+          <p class="kicker">Get In Touch</p>
+          <h2>Send Us<br><span class="gold">a Requirement</span></h2>
+          <div class="contact-items">
+            <div class="ci"><div class="ic">@</div><div><small>Email</small><a href="mailto:info@ca6enterprises.com">info@ca6enterprises.com</a></div></div>
+            <div class="ci"><div class="ic">FL</div><div><small>Location</small>Melbourne, Florida</div></div>
+            <div class="ci"><div class="ic">US</div><div><small>Buyers We Serve</small>Department of War &middot; Department of Defense</div></div>
+          </div>
+        </div>
+        <form action="https://formsubmit.co/info@ca6enterprises.com" method="POST">
+          <input type="hidden" name="_subject" value="Requirement for CA6 ENTERPRISES LLC">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <label>Name<input type="text" name="name" autocomplete="name" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Requirement<textarea name="message" rows="6" required placeholder="Item, part number, NSN, or solicitation; quantity; delivery point; date needed"></textarea></label>
+          <button class="btn btn-blue" type="submit">Send Message</button>
+          <p class="note">Your message goes straight to info@ca6enterprises.com.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 CA6 ENTERPRISES LLC &middot; Melbourne, Florida</span>
+      <span>Florida Document L23000310743</span>
+    </div>
+  </footer>
+</body>
+</html>
