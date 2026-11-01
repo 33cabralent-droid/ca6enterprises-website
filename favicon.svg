@@ -1,0 +1,6 @@
+<!-- favicon.svg: ca6enterprises.com tab icon, "CA6" in gold on black. Linked from index.html and 404.html. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CA6">
+  <rect width="64" height="64" rx="6" fill="#050608"/>
+  <rect x="3" y="3" width="58" height="58" rx="4" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <text x="32" y="41" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="22" fill="#e8c96a">CA6</text>
+</svg>
