@@ -1,0 +1,5 @@
+# _redirects: Cloudflare Pages redirect rules for ca6enterprises.com (read at deploy time, not served).
+# README.md stays in the repo for maintainers but should not be public. Pages rejects a 404 status code here,
+# so the rule rewrites (200 = internal proxy) to a path that does not exist; Pages then serves 404.html with HTTP 404.
+# Check: curl -sI https://ca6enterprises.com/README.md   -> HTTP 404
+/README.md /readme-not-public 200
