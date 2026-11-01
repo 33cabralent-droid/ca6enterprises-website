@@ -13,7 +13,8 @@ Live at <https://ca6enterprises.com> (and `www`). A single static page in dark b
 | `favicon.svg` | Tab icon: "CA6" in gold on black. |
 | `_headers` | Security headers Pages adds to every response (see below). Pages reads it; it is not served. |
 | `CA6-NAICS-Codes.pdf` | NAICS code sheet linked from the NAICS section. |
-| `README.md` | This file. Note: Pages serves every file in the repo root, so this README is public at `/README.md`. |
+| `README.md` | This file. Hidden from the public site by `_redirects` (`/README.md` returns 404). |
+| `_redirects` | Pages rule that hides `/README.md` (returns the 404 page). Pages reads it; it is not served. |
 
 ## Run locally
 
@@ -29,6 +30,10 @@ The local server does not apply `_headers` or the 404 page; those only take effe
 - Every push to `main` deploys to production automatically (about a minute). Custom domains: `ca6enterprises.com`, `www.ca6enterprises.com`.
 - Preview deployments for other branches are turned off (setting: "None", since 2026-11-01), so a pushed branch does not publish a public `*.pages.dev` preview. To preview a branch on purpose, turn previews back on for that branch in Pages > Settings > Builds & deployments.
 - Check a deploy: `curl -sI https://ca6enterprises.com/` should return `200` with the headers listed below.
+
+## Hidden files
+
+Pages serves every file in the repo root unless a rule hides it. `README.md` is hidden by `_redirects`. If you add a private note or other file that should not be public, add a line for it to `_redirects` (`/<file> /readme-not-public 200`) or keep it out of the repo.
 
 ## How to roll back
 
