@@ -1,0 +1,10 @@
+# _headers: response headers Cloudflare Pages adds to every path on ca6enterprises.com.
+# Pages reads this file at deploy time (it is not served). Why each header is here: see README.md, "Security headers".
+# Change a header by editing this file and pushing to main; check the result with: curl -sI https://ca6enterprises.com/
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formsubmit.co; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
