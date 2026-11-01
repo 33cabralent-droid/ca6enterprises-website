@@ -1,10 +1,23 @@
 <!DOCTYPE html>
+<!-- index.html: the whole ca6enterprises.com home page (dark, gold accents). Served as-is by Cloudflare Pages from main; see README.md for deploy and rollback. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CA6 ENTERPRISES LLC | Defense logistics supply</title>
   <meta name="description" content="CA6 ENTERPRISES LLC supplies the Department of War with logistics items: supplies, equipment, services, and related support. Melbourne, Florida.">
+  <link rel="canonical" href="https://ca6enterprises.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ca6enterprises.com/">
+  <meta property="og:site_name" content="CA6 ENTERPRISES LLC">
+  <meta property="og:title" content="CA6 ENTERPRISES LLC | Defense logistics supply">
+  <meta property="og:description" content="CA6 ENTERPRISES LLC supplies the Department of War with logistics items: supplies, equipment, services, and related support. Melbourne, Florida.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CA6 ENTERPRISES LLC | Defense logistics supply">
+  <meta name="twitter:description" content="CA6 ENTERPRISES LLC supplies the Department of War with logistics items: supplies, equipment, services, and related support. Melbourne, Florida.">
+  <!-- Loaded early (not deferred) so the "js" class is set before first paint and the phone menu does not flash open. -->
+  <script src="/menu.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -31,6 +44,7 @@
     .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
     .nav ul a { color: var(--muted); text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 600; }
     .nav ul a:hover { color: var(--gold2); }
+    .menu-toggle { display: none; }
 
     .hero { position: relative; min-height: clamp(560px, 88vh, 820px); display: flex; align-items: center; overflow: hidden;
       background:
@@ -100,7 +114,15 @@
       .nav ul { gap: 16px; }
     }
     @media (max-width: 600px) {
-      .nav ul { display: none; }
+      /* Without JavaScript the links stay visible and wrap under the brand, so the menu is never unreachable. */
+      html:not(.js) .nav { height: auto; flex-wrap: wrap; gap: 10px; padding-top: 12px; padding-bottom: 12px; }
+      html:not(.js) .nav ul { flex-wrap: wrap; gap: 8px 18px; }
+      .js .nav { position: relative; }
+      .js .menu-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; background: transparent; color: var(--gold2); border: 1px solid rgba(201,168,76,0.5); border-radius: 2px; font: inherit; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+      .js .menu-toggle[aria-expanded="true"] { background: rgba(201,168,76,0.12); }
+      .js .nav ul { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; padding: 6px 28px 14px; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0,0,0,0.5); }
+      .js .nav ul.open { display: flex; }
+      .js .nav ul a { display: block; padding: 12px 0; font-size: 0.82rem; }
       .stats, .grid4 { grid-template-columns: 1fr; }
       .row { grid-template-columns: 1fr; gap: 2px; }
       section.block { padding: 72px 0; }
@@ -111,7 +133,9 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top"><div class="mark">C6</div><span>CA6 ENTERPRISES LLC</span></a>
-      <nav aria-label="Main"><ul>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span aria-hidden="true">&#9776;</span> Menu</button>
+        <ul id="site-menu">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#capability">Capability Statement</a></li>
@@ -165,7 +189,7 @@
         <div class="grid3">
           <div class="card"><div class="ic">S</div><h3>Supplies</h3><p>Consumables and general supplies sourced to the specification in your requirement.</p></div>
           <div class="card"><div class="ic">E</div><h3>Equipment</h3><p>Equipment and parts for defense programs, matched to the item or NSN you name.</p></div>
-          <div class="card"><div class="ic">R</div><h3>Services & Related Support</h3><p>Services and related logistics support that go with the items you're buying.</p></div>
+          <div class="card"><div class="ic">R</div><h3>Services &amp; Related Support</h3><p>Services and related logistics support that go with the items you're buying.</p></div>
         </div>
       </div>
     </section>
