@@ -43,7 +43,7 @@ Pick one:
 | --- | --- | --- |
 | `Strict-Transport-Security` | `max-age=31536000` | Browsers use HTTPS only for a year. No `includeSubDomains` or `preload`, so other subdomains are not locked in. |
 | `X-Frame-Options` | `DENY` | No other site can frame this one (clickjacking). |
-| `Content-Security-Policy` | see `_headers` | Scripts only from this site (`menu.js` and Cloudflare's `/cdn-cgi/` email-decode script). Styles from this site, inline `<style>`, and Google Fonts CSS; fonts from `fonts.gstatic.com`. The form may only post to `https://formsubmit.co`. `frame-ancestors 'none'` repeats the no-framing rule. |
+| `Content-Security-Policy` | see `_headers` | Scripts only from this site (`menu.js` and Cloudflare's `/cdn-cgi/` email-decode script) and Cloudflare Web Analytics (`static.cloudflareinsights.com`, which reports to `/cdn-cgi/rum` or `cloudflareinsights.com`). Styles from this site, inline `<style>`, and Google Fonts CSS; fonts from `fonts.gstatic.com`. The form may only post to `https://formsubmit.co`. `frame-ancestors 'none'` repeats the no-framing rule. |
 | `Permissions-Policy` | camera, microphone, geolocation, payment, usb all off | The site needs none of them. |
 | `X-Content-Type-Options` | `nosniff` | Browsers trust the declared file type. |
 | `Referrer-Policy` | `strict-origin-when-cross-origin` | Other sites see only the domain, not full URLs. |
